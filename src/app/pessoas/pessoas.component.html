@@ -1,0 +1,62 @@
+<h1>Pessoas</h1>
+
+<form action="" class="form-inline">
+<div>
+  <a class="btn btn-primary"  routerLink="detalhe">Novo</a>
+</div>
+</form>
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>SobreNome</th>
+      <th>Nacionalidade</th>
+      <th>CEP</th>
+      <th>Estado</th>
+
+      <th>Cidade</th>
+      <th>Logradouro</th>
+      <th>Email</th>
+      <th>Telefone</th>
+
+    </tr>
+  </thead>
+  <tbody *ngIf="pessoas">
+    <tr *ngFor ="let pessoa of pessoas">
+      <td>{{pessoa.id}}</td>
+      <td>{{pessoa.nome}}</td>
+      <td>{{pessoa.sobreNome}}</td>
+      <td>{{pessoa.nacionalidade}}</td>
+      <td>{{pessoa.cep}}</td>
+      <td>{{pessoa.estado}}</td>
+      <td>{{pessoa.cidade}}</td>
+      <td>{{pessoa.logradouro}}</td>
+      <td>{{pessoa.email}}</td>
+      <td>{{pessoa.telefone}}</td>
+      <td>
+        <button type="button" class="btn btn-primary" (click)="editar(pessoa.id)">Editar</button>
+        <button type="button" class="btn btn-danger"(click)="openModal(template, pessoa.id)">Deletar</button>
+      </td>
+
+
+
+    </tr>
+  </tbody>
+  <tfoot *ngIf="!pessoas">
+    <td colspan="8" class="text-center">
+      <h4>Nenhuma pessoa encontrada</h4>
+    </td>
+  </tfoot>
+
+</table>
+
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Deseja realmente deletar essa Pessoa</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+

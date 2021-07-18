@@ -1,0 +1,83 @@
+<div class="container">
+  <form [formGroup]="form">
+  <div class="row">
+    <div class="col-4">
+      <label for="nome">Nome</label>
+      <input type="text" class="form-control "[ngClass]="{'is-invalid':form.get('nome').errors && form.get('nome').touched}" formControlName="nome" id="nome" >
+      <div class="invalid-feedback">
+          Nome é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="sobreNome">SobreNome</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':form.get('sobreNome').errors && form.get('sobreNome').touched}" formControlName="sobreNome" id="sobreNome" >
+      <div class="invalid-feedback">
+        SobreNome é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="nacionalidade">Nacionalidade</label>
+      <input type="text" class="form-control " [ngClass]="{'is-invalid':form.get('nacionalidade').errors && form.get('nacionalidade').touched}"formControlName="nacionalidade" id="nacionalidade" >
+      <div class="invalid-feedback">
+        Nacionalidade é obrigatório
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <label for="cep">Cep</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':form.get('cep').errors && form.get('cep').touched}"formControlName="cep" id="cep" (change)="buscarPorCep( form.get('cep').value)">
+      <div class="invalid-feedback">
+        Cep é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="estado">Estado</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':form.get('estado').errors && form.get('estado').touched}"formControlName="estado" id="estado" >
+      <div class="invalid-feedback">
+        Estado é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="formGroupExampleInput">Cidade</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':form.get('cidade').errors && form.get('cidade').touched}"formControlName="cidade" id="formGroupExampleInput" >
+      <div class="invalid-feedback">
+        Cidade é obrigatório
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-4">
+      <label for="logradouro">Logradouro</label>
+      <input type="text" class="form-control" [ngClass]="{'is-invalid':form.get('logradouro').errors && form.get('logradouro').touched}"formControlName="logradouro" id="logradouro" >
+      <div class="invalid-feedback">
+        Logradouro é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="email">Email</label>
+      <input type="text" class="form-control " [ngClass]="{'is-invalid':form.get('email').errors && form.get('email').touched}"formControlName="email"id="email" >
+      <div class="invalid-feedback">
+        E-mail é obrigatório
+      </div>
+    </div>
+    <div class="col-4">
+      <label for="telefone">Telefone</label>
+      <input type="text" class="form-control"[ngClass]="{'is-invalid':form.get('telefone').errors && form.get('telefone').touched}"formControlName="telefone" id="telefone" >
+      <div class="invalid-feedback">
+        Telefone é obrigatório
+      </div>
+    </div>
+  </div>
+  <div class=" text-left">
+    <button type="button" class="btn btn-danger"(click)="resetForm()" >Cancelar</button>
+  </div>
+  <div class=" text-right">
+    <button type="button" class="btn btn-primary"[disabled]="!form.valid"(click)="salvarPessoa()" >Salvar</button>
+  </div>
+</form>
+</div>
+
+
