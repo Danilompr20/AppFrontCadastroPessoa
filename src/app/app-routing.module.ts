@@ -4,7 +4,7 @@ import { PessoaDetalheComponent } from './pessoas/pessoa-detalhe/pessoa-detalhe.
 import { PessoasComponent } from './pessoas/pessoas.component';
 const routes: Routes = [
 
-
+      {path:"pessoas", component:PessoasComponent},
       {path:"detalhe/:id", component:PessoaDetalheComponent},
       {path:"detalhe", component:PessoaDetalheComponent},
 

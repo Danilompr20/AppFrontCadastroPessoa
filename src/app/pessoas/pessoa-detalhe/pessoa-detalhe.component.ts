@@ -108,7 +108,7 @@ this.pessoaService.buscarPorCep(cep).subscribe(
         )
       }
       this.pessoaService.getPessoas();
-      this.route.navigate(['/']);
+      this.route.navigate(['/pessoas']);
      // this.location.reload();
     }
 

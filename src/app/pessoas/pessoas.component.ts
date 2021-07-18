@@ -23,6 +23,7 @@ export class PessoasComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log("entrei")
      this.getPessoa();
   }
   getPessoa(){
